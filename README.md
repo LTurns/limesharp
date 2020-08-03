@@ -9,7 +9,8 @@ Make this work (repeat 3 times the contents of an array):
 ```javascript
 repeat([1,2,3]) //[1,2,3,1,2,3,1,2,3]
 ```
-```
+Your solution: 
+```javascript
 function repeat(value) {
     var arr = []; //empty array
     for (var i = 0; i < 3; i++) {  //iteration over each index
@@ -17,7 +18,6 @@ function repeat(value) {
     }
     return arr.join().split(",").map(Number); //return as one array (as oppose to mini subarrays)
   }
-  
 ```
 
 ###### If we type in our console your function and repeat([1,2,3]) then the result should be [1,2,3,1,2,3,1,2,3] 
