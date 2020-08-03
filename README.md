@@ -31,8 +31,15 @@ Make this work (no vowels, lowercase except the first letter):
 ```javascript
 reformat("liMeSHArp DeveLoper TEST"); //Lmshrp dvlpr tst
 ```
-
 Your solution:
+
+```javascript 
+function reformat(string){
+    var noVowels = string.slice(1).replace(/[aeiou]/gi, '').toLowerCase().replace(string[0], '')
+    var upperCase = string.slice(0, 1).toUpperCase();
+    return "" + upperCase + noVowels
+}
+```
 
 ###### If we type in our console your function and reformat("liMeSHArp DeveLoper TEST") then the result should be Lmshrp dvlpr tst
 
