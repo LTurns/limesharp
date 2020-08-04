@@ -64,22 +64,21 @@ Your solution:
 
 ```javascript 
 function next_binary_number(value){
+    var lastPosition = value.length - 1; 
 
-  newBinary = value.reverse();
-  // console.log(value);
-
-  for(i = 0; i < newBinary.length; i++){
-    if (newBinary[i] == 0){ 
-       newBinary[i] = 1 
-       break;
+    for (var i = lastPosition; i > 0; i--) {
+        if (value[i] == 0) {
+            value[i] = 1; 
+            return value;  
+        }
+         if (!value.includes(0)){
+          value.push(0);
+        }
+        value[i] = 0; 
     }
-    if (newBinary[i] == 1){
-      newBinary[i] = 0;
-    }
-  } 
-   return newBinary.reverse();
+    return value;  
 }
-next_binary_number([1,1])
+```
 
 ###### If we type in our console your function and next_binary_number([1,0,0,0,0,0,0,0,0,1]) then the result should look like 1,0,0,0,0,0,0,0,1,0 (or as an array).
 
@@ -87,34 +86,5 @@ next_binary_number([1,1])
 
 If you get invited to the first interview read the "What to expect.md" file.
 
-// expected output: [1, 5, 5, 5]
-//  function repeat(value) {
-//   var arr = [];
-//   for (var i = 0; i < 3; i++) {
-//     arr.push(value);
-//   }
-//   return arr.join().split(",").map(Number);
-// traverse from the right 
-//  convert all 1s to 0s until we find a 0. Finally convert the found 0 to 1.
-
-function next_binary_number(value){
-
-  
-  for (i = value - 1; i >= 0 && i < value; --i) {
-
-    console.log(value[i])
-    return value[i];
-
-
-    //   value[i] = 1
-    //   console.log(value);
-    //   break 
-    // } else if(value[i] == 1) {
-    //   value[i] = 0
-    //   console.log(value);
-    // }
-  }
-}
-next_binary_number([1,0]) // [1,1]
 
 
