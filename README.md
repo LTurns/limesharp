@@ -37,7 +37,7 @@ Your solution:
 
 ```javascript 
 function reformat(string){
-    var noVowels = string.slice(1).replace(/[aeiou]/gi, '').toLowerCase().replace(string[0], '') //regExr replacement
+    var noVowels = string.slice(1).replace(/[aeiou]/gi, '').toLowerCase() //regExr replacement
     var upperCase = string.slice(0, 1).toUpperCase(); //capitalise first letter
     return "" + upperCase + noVowels
 }
