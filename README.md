@@ -37,8 +37,8 @@ Your solution:
 
 ```javascript 
 function reformat(string){
-    var noVowels = string.slice(1).replace(/[aeiou]/gi, '').toLowerCase().replace(string[0], '')
-    var upperCase = string.slice(0, 1).toUpperCase();
+    var noVowels = string.slice(1).replace(/[aeiou]/gi, '').toLowerCase().replace(string[0], '') //regExr replacement
+    var upperCase = string.slice(0, 1).toUpperCase(); //capitalise first letter
     return "" + upperCase + noVowels
 }
 ```
@@ -64,19 +64,19 @@ Your solution:
 
 ```javascript 
 function next_binary_number(value){
-    var lastPosition = value.length - 1; 
+    var lastPosition = value.length - 1; //removes one from length
 
-    for (var i = lastPosition; i > 0; i--) {
-        if (value[i] == 0) {
-            value[i] = 1; 
-            return value;  
+    for (var i = lastPosition; i > 0; i--) {  //counts down new array
+        if (value[i] == 0) { 
+            value[i] = 1; //change 0 to 1
+            return value;  //can return here as nothing else would need to be changed
         }
-         if (!value.includes(0)){
+         if (!value.includes(0)){ //if no zeros and counting up, add to end
           value.push(0);
         }
-        value[i] = 0; 
+        value[i] = 0; // if 1, replace with 0
     }
-    return value;  
+    return value;  //return modified array
 }
 ```
 
